@@ -1,29 +1,12 @@
 import 'package:flutter/material.dart';
+import 'SamplesList.dart';
 
 void main() => runApp(App());
-
-abstract class AbstractListItem {}
-
-class HeadingItem implements AbstractListItem {
-  final String heading;
-
-  HeadingItem(this.heading);
-}
-
-class SampleItem implements AbstractListItem {
-  final String name;
-  final String description;
-  final Widget widget;
-
-  SampleItem(this.name, this.description, this.widget);
-}
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final title = 'Flutter Samples';
-
-    final samples = [];
 
     return MaterialApp(
       title: title,
@@ -32,9 +15,9 @@ class App extends StatelessWidget {
           title: Text(title),
         ),
         body: ListView.builder(
-          itemCount: samples.length,
+          itemCount: samplesList.length,
           itemBuilder: (context, index) {
-            final item = samples[index];
+            final item = samplesList[index];
 
             if (item is HeadingItem) {
               return ListTile(
@@ -64,6 +47,13 @@ class App extends StatelessWidget {
           },
         )
       ),
+      theme: ThemeData(
+        textTheme: TextTheme(
+          subhead: TextStyle(fontSize: 18.4),
+          body1: TextStyle(fontSize: 18.4),
+          button: TextStyle(fontSize: 16.0),
+        ),
+      )
     );
   }
 }
