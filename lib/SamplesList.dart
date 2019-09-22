@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'PiCalculatorWidget.dart';
+import 'ExpCalculatorWidget.dart';
 
 abstract class AbstractListItem {}
 
@@ -24,5 +24,10 @@ final samplesList = [
 		"Find PI to the Nth Digit",
 		"Enter a number and have the program generate PI up to that many decimal places. Keep a limit to how far the program will go.",
 		PiCalculatorWidget()
+	),
+	SampleItem(
+		"Find e to the Nth digit",
+		"Enter a number and have the program generate e up to that many decimal places using different algorithms. Keep a limit to how far the program will go.",
+		ExpCalculatorWidget()
 	)
 ];
